@@ -1,0 +1,14 @@
+#container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 320px;
+    height: 320px;
+    background-color: black;
+ 
+}
+.cell{
+    background-color: white;
+   
+    margin: 1px;
+    
+}
