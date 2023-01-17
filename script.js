@@ -17,15 +17,7 @@ const gameboard = (() => {
     let activePlayer = player1
 
     const display = document.querySelector('.display')
-    function displayPlayer(){
-        if (activePlayer === player1){
-            display.textContent = "Player X's turn"
-        }else if( activePlayer === player2){
-            display.textContent = "Player O's turn"
-        }else{
-            return;
-       }
-    }
+    
 
      function switchPlayers(){
         if (activePlayer === player1){
@@ -41,8 +33,13 @@ const gameboard = (() => {
      function reset(){
         activePlayer = player1;
         displayPlayer();
+        cell.forEach(cell => {
+            cell.textContent = ""
+        })
 
     };
+  const resetBtn = document.querySelector(".reset");
+    resetBtn.onclick = reset;
 
     //check winner if winner reset
     const winningCombos =[
@@ -61,6 +58,15 @@ const gameboard = (() => {
               
     })}
 
+    function displayPlayer(){
+        if (activePlayer === player1){
+            display.textContent = "Player X's turn"
+        }else if( activePlayer === player2){
+            display.textContent = "Player O's turn"
+        }else{
+            return;
+       }
+    }
         
     //check if all indexes equal a string then reset
 
